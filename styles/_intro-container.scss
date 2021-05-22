@@ -1,0 +1,235 @@
+.header-container {
+  min-height: 90vh;
+  background: url("../images/bg-pattern-intro.svg") center,
+    linear-gradient(to right, $gradient_very_light_red, $gradient_light_red);
+  background-position-x: 25%;
+  border-bottom-left-radius: 5rem;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 8vh;
+  padding: 1rem;
+
+  .logo {
+    margin-top: 1rem;
+  }
+
+  .nav-left {
+    @include flex(space-around, center, row);
+    width: 40%;
+    .nav-links {
+      width: 50%;
+      position: relative;
+      @include flex(space-between, center, row);
+
+      li {
+        list-style: none;
+      }
+
+      .connect-content {
+        position: absolute;
+        display: none;
+        left: 65%;
+        top: 130%;
+        height: 20vh;
+        background-color: $neutral_white;
+        box-shadow: 0pc 10px 10px rgba(0, 0, 0, 0.3);
+        border-radius: 0.5rem;
+        width: 50%;
+        transition: all 0.2s ease-in;
+        a {
+          @include flex(space-around, center, column);
+          color: $neutral_very_dark_grayish_blue;
+          font-size: $header6;
+          font-family: $font_ubuntu;
+          margin-top: 1rem;
+
+          &:hover {
+            color: $neutral_very_dark_black_blue;
+            text-decoration: none;
+            font-weight: bold;
+          }
+        }
+      }
+
+      .company-content {
+        position: absolute;
+        display: none;
+        left: 65%;
+        top: 130%;
+        height: 20vh;
+        background-color: $neutral_white;
+        box-shadow: 0pc 10px 10px rgba(0, 0, 0, 0.3);
+        border-radius: 0.5rem;
+        width: 50%;
+        transition: all 0.2s ease-in;
+        a {
+          @include flex(space-around, center, column);
+          color: $neutral_very_dark_grayish_blue;
+          font-size: $header6;
+          font-family: $font_ubuntu;
+          margin-top: 1rem;
+
+          &:hover {
+            color: $neutral_very_dark_black_blue;
+            text-decoration: none;
+            font-weight: bold;
+          }
+        }
+      }
+
+      .product-content {
+        position: absolute;
+        display: none;
+        left: 65%;
+        top: 130%;
+        height: 20vh;
+        background-color: $neutral_white;
+        box-shadow: 0pc 10px 10px rgba(0, 0, 0, 0.3);
+        border-radius: 0.5rem;
+        width: 50%;
+        transition: all 0.2s ease-in;
+        a {
+          @include flex(space-around, center, column);
+          color: $neutral_very_dark_grayish_blue;
+          font-size: $header6;
+          font-family: $font_ubuntu;
+          margin-top: 1rem;
+
+          &:hover {
+            color: $neutral_very_dark_black_blue;
+            text-decoration: none;
+            font-weight: bold;
+          }
+        }
+      }
+
+      li:hover {
+        .connect-content {
+          display: block;
+        }
+        .company-content {
+          display: block;
+          left: 25%;
+        }
+        .product-content {
+          display: block;
+          left: -30px;
+        }
+        .arrow {
+          transform: rotate(180deg);
+        }
+      }
+
+      li a {
+        text-decoration: none;
+        color: $neutral_white;
+        font-size: $header6;
+        font-family: $font_ubuntu;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .nav-right {
+    width: 25%;
+    @include flex(space-around, center, row);
+    a {
+      text-decoration: none;
+      color: $neutral_white;
+      font-family: $font_ubuntu;
+      font-size: $header6;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .sign-up {
+      border: none;
+      border-radius: 2rem;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      padding: 1rem 3rem;
+      background: $neutral_white;
+      color: $primary_light_red;
+      font-family: $font_ubuntu;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: $header6;
+
+      &:hover {
+        background: $primary_very_light_red;
+        color: $neutral_white;
+      }
+    }
+
+    .hamburger {
+      display: none;
+    }
+  }
+}
+
+.intro-header {
+  @include flex(center, center, column);
+  margin-top: 10rem;
+
+  h1 {
+    font-family: $font_ubuntu;
+    color: $neutral_white;
+    font-weight: lighter;
+  }
+  p {
+    margin-top: 1rem;
+    color: $neutral_white;
+    font-family: $font_ubuntu;
+    font-size: $header6;
+  }
+}
+
+.intro-btns {
+  margin-top: 2rem;
+  text-align: center;
+
+  .start-free {
+    border: none;
+    border-radius: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 1rem 2rem;
+    background: $neutral_white;
+    color: $primary_light_red;
+    font-family: $font_ubuntu;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: $header6;
+
+    &:hover {
+      background: $primary_very_light_red;
+      color: $neutral_white;
+    }
+  }
+
+  .learn-more {
+    border: 1px solid $neutral_white;
+    border-radius: 2rem;
+    background: none;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 1rem 2rem;
+    color: $neutral_white;
+    font-family: $font_ubuntu;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: $header6;
+    margin-left: 1rem;
+
+    &:hover {
+      background: $neutral_white;
+      color: $primary_light_red;
+    }
+  }
+}

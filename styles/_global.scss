@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+$header1: 4rem;
+$header2: 3.5rem;
+$header3: 2.5rem;
+$header4: 2rem;
+$header5: 1.5rem;
+$header6: 1rem;
+
+$primary_light_red: hsl(356, 100%, 66%);
+$primary_very_light_red: hsl(355, 100%, 74%);
+$primary_very_dark_blue: hsl(208, 49%, 24%);
+$neutral_white: hsl(0, 0%, 100%);
+$neutral_grayish_blue: hsl(240, 2%, 79%);
+$neutral_very_dark_grayish_blue: hsl(207, 13%, 34%);
+$neutral_very_dark_black_blue: hsl(240, 10%, 16%);
+$gradient_very_light_red: hsl(13, 100%, 72%);
+$gradient_light_red: hsl(353, 100%, 62%);
+$gradient_very_dark_gray_blue: hsl(237, 17%, 21%);
+$gradient_very_dark_desaturated_blue: hsl(237, 23%, 32%);
+
+$font_overpass: "Overpass", sans-serif;
+$font_ubuntu: "Ubuntu", sans-serif;
+
+@mixin flex($justify, $align, $direction) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+body {
+  min-height: 100vh;
+  font-size: 1.6rem;
+  overflow-x: hidden;
+}

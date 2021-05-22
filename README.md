@@ -28,8 +28,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Insure Landing Page Solution](https://www.frontendmentor.io/challenges/insure-landing-page-uTU68JV8/hub/htmlcsssassflexjavscript-lG_WIQRXr)
-- Live Site URL: [Live Site](https://insure-landing-site.netlify.app/)
+- Solution URL: [Blogr Landing Page Solution](https://www.frontendmentor.io/challenges/blogr-landing-page-EX2RLAApP/hub/htmlcsssassjavascriptflexbox-7k8375yN6)
+- Live Site URL: [Live Site](https://blogr-landin-site.netlify.app/)
 
 ## My process
 

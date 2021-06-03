@@ -1,27 +1,32 @@
 /* Future Section */
 .future-section {
   position: relative;
-  padding: 5rem 10rem;
+  padding-top: 5rem;
+  width: 90%;
+  margin: auto;
   .future-heading {
     text-align: center;
     font-family: $font_overpass;
+    font-size: $header3;
     color: $primary_very_dark_blue;
   }
 
   .future-content {
     @include flex(center, center, row);
+    position: relative;
     .future-text-content {
+      flex: 1 0 40%;
       .editor-content {
         h3 {
           font-family: $font_overpass;
-          font-size: $header4;
+          font-size: $header3;
           color: $primary_very_dark_blue;
         }
 
         p {
           margin-top: 1rem;
           font-family: $font_overpass;
-          font-size: $header6;
+          font-size: $header5;
           line-height: 2rem;
           color: $neutral_very_dark_black_blue;
         }
@@ -31,14 +36,14 @@
         margin-top: 2rem;
         h3 {
           font-family: $font_overpass;
-          font-size: $header4;
+          font-size: $header3;
           color: $primary_very_dark_blue;
         }
 
         p {
           margin-top: 1rem;
           font-family: $font_overpass;
-          font-size: $header6;
+          font-size: $header5;
           line-height: 2rem;
           color: $neutral_very_dark_black_blue;
         }
@@ -46,12 +51,12 @@
     }
 
     .future-illustration {
+      flex: 1 0 60%;
       position: relative;
-      width: 50%;
-      left: 10%;
+      right: -270px;
       img {
-        width: 60vw;
-        height: 100vh;
+        max-width: 100%;
+        height: auto;
         object-fit: cover;
       }
     }
@@ -69,21 +74,25 @@
     );
   position: relative;
   padding: 0rem 5rem;
-  height: 70vh;
+  height: 60vh;
   background-position-x: -250px;
   background-position-y: -450px;
   border-bottom-left-radius: 5rem;
   border-top-right-radius: 5rem;
   .infrastructure-content {
+    width: 90%;
+    margin: auto;
     @include flex(center, center, row);
+    position: relative;
 
     .mobile-illustration {
+      flex: 1 0 60%;
       position: relative;
       top: -70px;
-      width: 100%;
+      left: -88px;
       img {
-        width: 45vw;
-        height: 100%;
+        max-width: 100%;
+        height: auto;
         object-fit: cover;
       }
     }
@@ -91,16 +100,17 @@
     .infrastructure-text {
       position: relative;
       top: -100px;
+      flex: 1 0 40%;
 
       h3 {
         font-family: $font_overpass;
-        font-size: $header4;
+        font-size: $header3;
         color: $neutral_white;
       }
       p {
         margin-top: 1rem;
         font-family: $font_overpass;
-        font-size: $header6;
+        font-size: $header5;
         line-height: 2rem;
         color: $neutral_white;
       }
@@ -108,37 +118,39 @@
   }
 }
 
-/* Infrstructure Section */
+/* Tools Section */
 .tools-section {
-  padding: 5rem 5rem;
   margin-top: 10rem;
   min-height: 100vh;
   .tools-content {
     @include flex(center, center, row);
+    width: 90%;
+    margin: auto;
 
     .illustration-laptop {
       position: relative;
-      width: 50%;
-      left: -310px;
+      flex: 1 0 60%;
+      left: -270px;
       img {
-        width: 60vw;
-        height: 100vh;
+        max-width: 100%;
+        height: auto;
         object-fit: cover;
       }
     }
 
     .tools-text-content {
+      flex: 1 0 40%;
       .simple-content {
         h3 {
           font-family: $font_overpass;
-          font-size: $header4;
+          font-size: $header3;
           color: $primary_very_dark_blue;
         }
 
         p {
           margin-top: 1rem;
           font-family: $font_overpass;
-          font-size: $header6;
+          font-size: $header5;
           line-height: 2rem;
           color: $neutral_very_dark_black_blue;
         }
@@ -148,14 +160,14 @@
         margin-top: 2rem;
         h3 {
           font-family: $font_overpass;
-          font-size: $header4;
+          font-size: $header3;
           color: $primary_very_dark_blue;
         }
 
         p {
           margin-top: 1rem;
           font-family: $font_overpass;
-          font-size: $header6;
+          font-size: $header5;
           line-height: 2rem;
           color: $neutral_very_dark_black_blue;
         }
@@ -169,11 +181,10 @@
   min-height: 50vh;
   background-color: $neutral_very_dark_black_blue;
   border-top-right-radius: 5rem;
-  padding: 3rem;
+  padding: 8rem;
   margin-top: 10rem;
   .footer-content {
     @include flex(space-around, center, row);
-
     .footer-logo {
       align-self: flex-start;
     }
@@ -183,6 +194,7 @@
       h5 {
         font-family: $font_overpass;
         color: $neutral_white;
+        font-size: $header4;
       }
       .product-links {
         margin-top: 1rem;
@@ -192,7 +204,7 @@
       }
       .product-links a {
         font-family: $font_overpass;
-        font-size: $header6;
+        font-size: $header5;
         color: $neutral_grayish_blue;
         text-decoration: none;
 
@@ -208,6 +220,7 @@
       h5 {
         font-family: $font_overpass;
         color: $neutral_white;
+        font-size: $header4;
       }
       .company-links {
         margin-top: 1rem;
@@ -217,7 +230,7 @@
       }
       .company-links a {
         font-family: $font_overpass;
-        font-size: $header6;
+        font-size: $header5;
         color: $neutral_grayish_blue;
         text-decoration: none;
 
@@ -233,6 +246,7 @@
       h5 {
         font-family: $font_overpass;
         color: $neutral_white;
+        font-size: $header4;
       }
       .connect-links {
         margin-top: 1rem;
@@ -242,7 +256,7 @@
       }
       .connect-links a {
         font-family: $font_overpass;
-        font-size: $header6;
+        font-size: $header5;
         color: $neutral_grayish_blue;
         text-decoration: none;
 

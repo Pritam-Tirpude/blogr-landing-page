@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-$header1: 4rem;
+$header1: 5rem;
 $header2: 3.5rem;
 $header3: 2.5rem;
 $header4: 2rem;
@@ -31,6 +31,10 @@ $font_ubuntu: "Ubuntu", sans-serif;
   justify-content: $justify;
   align-items: $align;
   flex-direction: $direction;
+}
+
+html {
+  font-size: 62.5%;
 }
 
 body {

@@ -5,9 +5,10 @@
 .attribution {
   font-size: 1.2rem;
   text-align: center;
+  font-family: $font_overpass;
 }
 .attribution a {
-  color: hsl(228, 45%, 44%);
+  color: $primary_light_red;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
@@ -17,186 +18,181 @@
     }
   }
 }
+.nav-active {
+  opacity: 1;
+}
 
 @media screen and (max-width: 768px) {
   nav {
-    .nav-left {
-      .nav-links {
-        box-shadow: 0pc 10px 10px rgba(0, 0, 0, 0.3);
-        position: absolute;
-        left: 40px;
-        height: 80vh;
-        top: 12vh;
-        background: $neutral_white;
-        display: block;
-        text-align: center;
-        width: 80%;
-      }
-      .nav-links li {
-        margin-top: 3rem;
+    .nav-links.open {
+      transform: translateX(0%);
+    }
+
+    .nav-links li {
+      opacity: 0;
+    }
+    .nav-links li:nth-child(1) {
+      transition: all 1s ease-in 0.2s;
+    }
+    .nav-links li:nth-child(2) {
+      transition: all 1s ease-in 0.6s;
+    }
+    .nav-links li:nth-child(3) {
+      transition: all 1s ease-in 0.8s;
+    }
+    .nav-links li.fade {
+      opacity: 1;
+    }
+    .nav-links {
+      position: fixed;
+      right: 0px;
+      left: 0px;
+      height: 80vh;
+      display: flex;
+      box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
+      flex-direction: column;
+      align-items: center;
+      background: white;
+      top: 14vh;
+      width: 90%;
+      transition: all 1s ease-out;
+      transform: translateX(-100%);
+
+      li > .arrow-light,
+      .arrow-light-company,
+      .arrow-light-connect {
+        content: url("../images/icon-arrow-dark.svg");
+        background: navy;
+        display: none;
       }
 
-      .nav-links li > a {
+      li > .arrow-dark-product,
+      .arrow-dark-company,
+      .arrow-dark-connect {
+        display: inline-flex;
+      }
+
+      li {
+        margin-left: 0px;
+      }
+      li > a {
         color: $primary_very_dark_blue;
-        margin-top: 3rem;
-        font-weight: bold;
+      }
+
+      .product-content {
+        margin-top: 0rem;
+        left: 50%;
+        transform: translateX(-50%);
+        background: $neutral_grayish_blue;
+        width: 300px;
+      }
+
+      .company-content {
+        margin-top: 0rem;
+        left: 50%;
+        transform: translateX(-50%);
+        background: $neutral_grayish_blue;
+        width: 300px;
       }
 
       .connect-content {
-        position: absolute;
-        top: 0%;
+        margin-top: 0rem;
+        left: 50%;
+        transform: translateX(-50%);
+        background: $neutral_grayish_blue;
+        width: 300px;
+      }
+
+      .nav-right {
+        margin-left: 0rem;
+        a {
+          color: $primary_very_dark_blue;
+        }
       }
     }
 
-    .nav-right {
-      a {
-        position: absolute;
-        top: 500%;
-        left: 43%;
-        font-weight: bold;
-        color: $primary_very_dark_blue;
-      }
-      .sign-up {
-        top: 80vh;
-        left: 30%;
-        display: block;
-        position: absolute;
-        color: $neutral_white;
-        background: linear-gradient(
-          to right,
-          $gradient_very_light_red,
-          $gradient_light_red
-        );
-      }
-
-      .hamburger {
-        display: block;
-        cursor: pointer;
-      }
-
-      .hamburger.close {
-        content: url("../images/icon-close.svg");
-      }
+    .hamburger {
+      display: block;
+      cursor: pointer;
     }
   }
 
-  .intro-header {
-    h1 {
-      text-align: center;
-    }
-    p {
-      text-align: center;
-    }
-  }
-
-  // Future Section
   .future-section {
-    padding: 1rem;
-    margin-top: 10rem;
-    .future-heading {
-      text-align: center;
-      font-size: $header5;
-    }
-
     .future-content {
-      flex-wrap: wrap-reverse;
+      text-align: center;
+      flex-direction: column-reverse;
+
       .future-text-content {
-        text-align: center;
-
-        .editor-content {
-          h3 {
-            font-size: $header5;
-          }
-        }
-
-        .robust-content {
-          h3 {
-            font-size: $header5;
-          }
-        }
+        margin-top: 3rem;
       }
 
       .future-illustration {
-        width: 100%;
-        left: 0%;
-        img {
-          content: url("../images/illustration-editor-mobile.svg");
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
+        margin-top: 3rem;
+        right: 0px;
+        content: url("../images/illustration-editor-mobile.svg");
       }
     }
   }
 
-  /* Infrastructure section */
   .infrastructure-section {
-    margin-top: 20rem;
-    min-height: 100vh;
-    padding: 1rem;
+    position: relative;
+    top: 200px;
+    text-align: center;
+    height: 80vh;
     .infrastructure-content {
+      flex-direction: column;
       text-align: center;
+
       .mobile-illustration {
         top: -200px;
-        left: -30px;
-        width: 0%;
-        img {
-          width: 100vw;
-          height: 100%;
-          object-fit: cover;
-        }
+        left: 2%;
+        width: 100vw;
       }
 
       .infrastructure-text {
-        top: 250px;
-        h3 {
-          font-size: $header5;
-        }
+        top: -200px;
       }
     }
   }
 
-  /* Tools Section */
   .tools-section {
-    padding: 1rem;
-
+    margin-top: 25rem;
     .tools-content {
       text-align: center;
-      flex-flow: column;
+      flex-direction: column;
       .illustration-laptop {
-        position: relative;
-        width: 100%;
-        left: 0%;
-
-        img {
-          content: url("../images/illustration-laptop-mobile.svg");
-          width: 100vw;
-          height: 100%;
-          object-fit: cover;
-        }
+        left: 0;
+        content: url("../images/illustration-laptop-mobile.svg");
       }
 
       .tools-text-content {
-        margin-top: 5rem;
+        margin-top: 3rem;
       }
     }
   }
 
-  /* Footer Section*/
   .footer-section {
-    padding: 5rem 10rem;
+    text-align: center;
     .footer-content {
       @include flex(center, center, column);
-      text-align: center;
+
+      .footer-logo {
+        align-self: center;
+      }
 
       .product {
-        margin-top: 2rem;
+        margin-top: 3rem;
+        align-self: center;
       }
+
       .company {
         margin-top: 2rem;
+        align-self: center;
       }
+
       .connect {
         margin-top: 2rem;
+        align-self: center;
       }
     }
   }

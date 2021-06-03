@@ -7,229 +7,174 @@
 }
 
 nav {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  min-height: 8vh;
-  padding: 1rem;
+  @include flex(space-around, center, row);
+  height: 10vh;
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 5rem;
 
-  .logo {
-    margin-top: 1rem;
-  }
-
-  .nav-left {
+  .nav-links {
+    width: 100%;
     @include flex(space-around, center, row);
-    width: 40%;
-    .nav-links {
-      width: 50%;
-      position: relative;
-      @include flex(space-between, center, row);
+    list-style: none;
 
-      li {
-        list-style: none;
-      }
-
-      .connect-content {
-        position: absolute;
-        display: none;
-        left: 65%;
-        top: 130%;
-        height: 20vh;
-        background-color: $neutral_white;
-        box-shadow: 0pc 10px 10px rgba(0, 0, 0, 0.3);
-        border-radius: 0.5rem;
-        width: 50%;
-        transition: all 0.2s ease-in;
-        a {
-          @include flex(space-around, center, column);
-          color: $neutral_very_dark_grayish_blue;
-          font-size: $header6;
-          font-family: $font_ubuntu;
-          margin-top: 1rem;
-
-          &:hover {
-            color: $neutral_very_dark_black_blue;
-            text-decoration: none;
-            font-weight: bold;
-          }
-        }
-      }
-
-      .company-content {
-        position: absolute;
-        display: none;
-        left: 65%;
-        top: 130%;
-        height: 20vh;
-        background-color: $neutral_white;
-        box-shadow: 0pc 10px 10px rgba(0, 0, 0, 0.3);
-        border-radius: 0.5rem;
-        width: 50%;
-        transition: all 0.2s ease-in;
-        a {
-          @include flex(space-around, center, column);
-          color: $neutral_very_dark_grayish_blue;
-          font-size: $header6;
-          font-family: $font_ubuntu;
-          margin-top: 1rem;
-
-          &:hover {
-            color: $neutral_very_dark_black_blue;
-            text-decoration: none;
-            font-weight: bold;
-          }
-        }
-      }
-
-      .product-content {
-        position: absolute;
-        display: none;
-        left: 65%;
-        top: 130%;
-        height: 20vh;
-        background-color: $neutral_white;
-        box-shadow: 0pc 10px 10px rgba(0, 0, 0, 0.3);
-        border-radius: 0.5rem;
-        width: 50%;
-        transition: all 0.2s ease-in;
-        a {
-          @include flex(space-around, center, column);
-          color: $neutral_very_dark_grayish_blue;
-          font-size: $header6;
-          font-family: $font_ubuntu;
-          margin-top: 1rem;
-
-          &:hover {
-            color: $neutral_very_dark_black_blue;
-            text-decoration: none;
-            font-weight: bold;
-          }
-        }
-      }
-
-      li:hover {
-        .connect-content {
-          display: block;
-        }
-        .company-content {
-          display: block;
-          left: 25%;
-        }
-        .product-content {
-          display: block;
-          left: -30px;
-        }
-        .arrow {
-          transform: rotate(180deg);
-        }
-      }
-
-      li a {
-        text-decoration: none;
-        color: $neutral_white;
-        font-size: $header6;
-        font-family: $font_ubuntu;
-
-        &:hover {
-          text-decoration: underline;
-        }
-      }
+    li {
+      margin-left: 10px;
     }
-  }
 
-  .nav-right {
-    width: 25%;
-    @include flex(space-around, center, row);
-    a {
-      text-decoration: none;
+    li > a {
       color: $neutral_white;
+      text-decoration: none;
       font-family: $font_ubuntu;
-      font-size: $header6;
+      font-size: $header5;
 
       &:hover {
-        text-decoration: underline;
+        color: $primary_very_dark_blue;
+        text-decoration: 2px solid underline;
+        text-underline-offset: 10px;
       }
     }
 
-    .sign-up {
-      border: none;
-      border-radius: 2rem;
-      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-      padding: 1rem 3rem;
-      background: $neutral_white;
-      color: $primary_light_red;
-      font-family: $font_ubuntu;
-      font-weight: bold;
-      cursor: pointer;
-      font-size: $header6;
-
-      &:hover {
-        background: $primary_very_light_red;
-        color: $neutral_white;
-      }
-    }
-
-    .hamburger {
+    li > .arrow-dark-product,
+    .arrow-dark-company,
+    .arrow-dark-connect {
       display: none;
     }
-  }
-}
 
-.intro-header {
-  @include flex(center, center, column);
-  margin-top: 10rem;
+    .product-content,
+    .company-content,
+    .connect-content {
+      margin-top: 10px;
+      position: absolute;
+      background: $neutral_white;
+      border-radius: 0.5rem;
+      box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
+      width: 150px;
+      height: 150px;
+      padding: 1rem;
+      list-style: none;
+      opacity: 0;
+      @include flex(space-around, center, column);
+      transition: all 0.3s ease-in;
+      pointer-events: none;
+      z-index: 1;
+      a {
+        color: $neutral_very_dark_black_blue;
+        font-family: $font_ubuntu;
+        font-size: $header5;
+        &:hover {
+          color: $primary_very_dark_blue;
+          font-weight: bold;
+        }
+      }
+    }
 
-  h1 {
-    font-family: $font_ubuntu;
-    color: $neutral_white;
-    font-weight: lighter;
-  }
-  p {
-    margin-top: 1rem;
-    color: $neutral_white;
-    font-family: $font_ubuntu;
-    font-size: $header6;
-  }
-}
+    .nav-right {
+      margin-left: 50rem;
+      a {
+        color: $neutral_white;
+        text-decoration: none;
+        font-family: $font_ubuntu;
+        font-size: $header5;
 
-.intro-btns {
-  margin-top: 2rem;
-  text-align: center;
+        &:hover {
+          text-decoration: 2px solid underline;
+          text-underline-offset: 10px;
+          color: $primary_very_dark_blue;
+        }
+      }
 
-  .start-free {
-    border: none;
-    border-radius: 2rem;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    padding: 1rem 2rem;
-    background: $neutral_white;
-    color: $primary_light_red;
-    font-family: $font_ubuntu;
-    font-weight: bold;
-    cursor: pointer;
-    font-size: $header6;
+      button {
+        background: $neutral_white;
+        padding: 1rem 3rem;
+        border: none;
+        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+          rgba(0, 0, 0, 0.23) 0px 6px 6px;
+        border-radius: 2rem;
+        margin-left: 1rem;
+        font-family: $font_ubuntu;
+        font-size: $header5;
+        font-weight: bold;
+        color: $primary_light_red;
+        cursor: pointer;
 
-    &:hover {
-      background: $primary_very_light_red;
-      color: $neutral_white;
+        &:hover {
+          background: $primary_very_light_red;
+          color: $neutral_white;
+          transition: background 0.5s ease;
+        }
+      }
     }
   }
 
-  .learn-more {
-    border: 1px solid $neutral_white;
-    border-radius: 2rem;
-    background: none;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    padding: 1rem 2rem;
+  .hamburger {
+    display: none;
+  }
+}
+
+.intro-heading {
+  position: relative;
+  top: 20vh;
+  text-align: center;
+  h1 {
     color: $neutral_white;
     font-family: $font_ubuntu;
-    font-weight: bold;
-    cursor: pointer;
-    font-size: $header6;
-    margin-left: 1rem;
+    font-size: $header1;
+    font-weight: lighter;
+  }
 
-    &:hover {
+  p {
+    color: $neutral_white;
+    font-family: $font_ubuntu;
+    font-size: $header5;
+    margin-top: 1rem;
+  }
+
+  .intro-btns {
+    margin-top: 2rem;
+    .free-btn {
       background: $neutral_white;
+      padding: 1.2rem 2rem;
+      border: none;
+      box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+        rgba(0, 0, 0, 0.23) 0px 6px 6px;
+      border-radius: 2rem;
+      font-family: $font_ubuntu;
+      font-size: $header5;
+      font-weight: bold;
       color: $primary_light_red;
+      cursor: pointer;
+
+      &:hover {
+        background: linear-gradient(
+          to right,
+          $gradient_very_light_red,
+          $gradient_light_red
+        );
+        color: $neutral_white;
+        transition: all 0.5s ease-in;
+      }
+    }
+
+    .learn-btn {
+      background: none;
+      padding: 1.2rem 2rem;
+      border: 1px solid $neutral_white;
+      box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+        rgba(0, 0, 0, 0.23) 0px 6px 6px;
+      border-radius: 2rem;
+      margin-left: 1rem;
+      font-family: $font_ubuntu;
+      font-size: $header5;
+      font-weight: bold;
+      color: $neutral_white;
+      cursor: pointer;
+
+      &:hover {
+        background: $neutral_white;
+        color: $primary_light_red;
+        transition: all 0.5s ease-in;
+      }
     }
   }
 }

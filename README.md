@@ -28,7 +28,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Blogr Landing Page Solution](https://www.frontendmentor.io/challenges/blogr-landing-page-EX2RLAApP/hub/htmlcsssassjavascriptflexbox-7k8375yN6)
+- Solution URL: [Blogr Landing Page Solution](https://www.frontendmentor.io/challenges/blogr-landing-page-EX2RLAApP/hub/html5-css-sass-javascript-flex-im4OyqN-N)
 - Live Site URL: [Live Site](https://blogr-landin-site.netlify.app/)
 
 ## My process
